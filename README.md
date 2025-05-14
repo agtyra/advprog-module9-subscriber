@@ -8,3 +8,7 @@
    - **Password (`guest`)**: the password for that user.  
    - **Host (`localhost`)**: the machine where the broker is running.
    - **Port (`5672`)**: the TCP port on which the broker listens for AMQP connections (5672 is the default port).
+
+- Simulation slow subscriber
+   ![alt text](img/img1.png)
+   The total number of messages in the queue reached 26 on my machine. The publisher was publishing faster than the subscriber could process them, so events piled up until the subscriber caught up and began clearing the backlog.
