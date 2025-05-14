@@ -12,3 +12,7 @@
 - Simulation slow subscriber
    ![alt text](img/img1.png)
    The total number of messages in the queue reached 16 on my machine. The publisher was publishing faster than the subscriber could process them, so events piled up until the subscriber caught up and began clearing the backlog.
+
+- Reflection and Running at least three subscribers
+   ![alt text](img/img2.png)
+   When the publisher sent its burst of events, the queue briefly climbed to 8 even though three subscriber instances were listening. Because all three consumers compete for messages, the backlog never grows as large as with a single subscriber—but a small spike still appears whenever the publisher’s send rate momentarily outpaces the combined consumption rate. Once those eight messages are pulled off by the subscribers, the queue returns to zero.
